@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Buddy - Teams Mode</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="teams-container">
+    <!-- Top Navigation Bar -->
+    <div class="top-bar">
+      <div class="app-title">Microsoft Teams Clone</div>
+      <div class="search-bar">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="profile-section">
+        <div class="profile-pic">VR</div>
+      </div>
+    </div>
+
+    <div class="main-body">
+      <!-- Left Rail (Navigation) -->
+      <div class="left-rail">
+        <div class="nav-item"><i class="fa fa-bell"></i><span>Activity</span></div>
+        <div class="nav-item active"><i class="fa fa-comment-dots"></i><span>Chat</span></div>
+        <div class="nav-item"><i class="fa fa-users"></i><span>Teams</span></div>
+        <div class="nav-item"><i class="fa fa-calendar"></i><span>Calendar</span></div>
+        <div class="nav-item"><i class="fa fa-phone"></i><span>Calls</span></div>
+        <div class="nav-item"><i class="fa fa-file"></i><span>Files</span></div>
+      </div>
+
+      <!-- List Pane (Recent Chats) -->
+      <div class="list-pane">
+        <div class="list-header">
+          <h3>Chat</h3>
+          <i class="fa fa-filter"></i>
+        </div>
+        <div class="chat-list-item active">
+          <div class="avatar-circle">🤖</div>
+          <div class="chat-info">
+            <span class="chat-name">Virtual Buddy</span>
+            <span class="chat-preview">Bot is ready...</span>
+          </div>
+          <span class="chat-time">Now</span>
+        </div>
+        <div class="chat-list-item">
+          <div class="avatar-circle">JS</div>
+          <div class="chat-info">
+            <span class="chat-name">John Smith</span>
+            <span class="chat-preview">Hey, how are you?</span>
+          </div>
+          <span class="chat-time">10:30 AM</span>
+        </div>
+      </div>
+
+      <!-- Main Chat Area -->
+      <div class="chat-area">
+        <div class="chat-header">
+          <div class="header-left">
+            <div class="avatar-circle">🤖</div>
+            <span class="header-name">Virtual Buddy</span>
+          </div>
+          <div class="header-icons">
+            <i class="fa fa-phone"></i>
+            <i class="fa fa-video"></i>
+            <i class="fa fa-info-circle"></i>
+          </div>
+        </div>
+
+        <div id="chat-messages" class="chat-messages">
+          <!-- Messages will be injected here -->
+        </div>
+
+        <div class="chat-input-container">
+          <div class="input-toolbar">
+            <i class="fa fa-bold"></i>
+            <i class="fa fa-italic"></i>
+            <i class="fa fa-underline"></i>
+            <i class="fa fa-strikethrough"></i>
+          </div>
+          <div class="input-box-wrapper">
+            <input id="message-input" type="text" placeholder="Type a new message" autocomplete="off" />
+          </div>
+          <div class="bottom-toolbar">
+            <div class="left-tools">
+              <i class="fa fa-font"></i>
+              <i class="fa fa-paperclip"></i>
+              <i class="fa fa-smile"></i>
+              <i class="fa fa-image"></i>
+            </div>
+            <button id="send-btn" class="send-button"><i class="fa fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
