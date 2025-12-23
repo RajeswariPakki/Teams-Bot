@@ -1,0 +1,361 @@
+:root {
+  --teams-purple: #6264A7;
+  --teams-purple-dark: #464775;
+  --teams-bg: #F3F2F1;
+  --teams-sidebar-dark: #33344A; /* Darker rail */
+  --teams-white: #ffffff;
+  --teams-border: #E1DFDD;
+  --teams-text: #252423;
+  --teams-gray-text: #605E5C;
+  --hover-gray: #EAEAEA;
+  --self-msg-bg: #E8EBF5; /* Light purple tint */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--teams-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.teams-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+  background-color: var(--teams-purple-dark); /* Usually purple or dark */
+  color: white;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  justify-content: space-between;
+}
+
+.app-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.search-bar {
+  background: rgba(255, 255, 255, 0.7); /* Translucent */
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+  width: 40%;
+  max-width: 600px;
+}
+
+.search-bar i {
+  color: var(--teams-purple-dark);
+  margin-right: 8px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  outline: none;
+  font-size: 13px;
+}
+
+.profile-section .profile-pic {
+  width: 32px;
+  height: 32px;
+  background-color: #8764B8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+/* --- Main Body Layout --- */
+.main-body {
+  display: flex;
+  flex: 1; /* Take remaining height */
+  overflow: hidden;
+}
+
+/* --- Left Rail --- */
+.left-rail {
+  width: 68px;
+  background-color: #EBEBEB; /* Or white/gray depending on theme */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  border-right: 1px solid var(--teams-border);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 0;
+  cursor: pointer;
+  color: var(--teams-gray-text);
+  font-size: 10px;
+}
+
+.nav-item:hover {
+  background-color: var(--hover-gray);
+}
+
+.nav-item.active {
+  color: var(--teams-purple);
+  border-left: 3px solid var(--teams-purple); /* Active indicator */
+}
+
+.nav-item i {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+/* --- List Pane --- */
+.list-pane {
+  width: 290px;
+  background-color: #F0F0F0; /* Slightly darker than white */
+  border-right: 1px solid var(--teams-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.list-header {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.list-header i {
+  cursor: pointer;
+  color: var(--teams-gray-text);
+}
+
+.chat-list-item {
+  display: flex;
+  padding: 10px 16px;
+  align-items: center;
+  cursor: pointer;
+  background: white;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.chat-list-item:hover {
+  background-color: #F8F8F8;
+}
+
+.chat-list-item.active {
+  background-color: white;
+  border-left: 4px solid var(--teams-purple);
+}
+
+.avatar-circle {
+  width: 32px;
+  height: 32px;
+  background-color: #D0D0D0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.chat-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--teams-text);
+}
+
+.chat-preview {
+  font-size: 12px;
+  color: var(--teams-gray-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-time {
+  font-size: 11px;
+  color: var(--teams-gray-text);
+  margin-left: 8px;
+}
+
+/* --- Chat Area --- */
+.chat-area {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  height: 60px;
+  border-bottom: 1px solid var(--teams-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.header-icons i {
+  color: var(--teams-purple);
+  margin-left: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #F5F5F5;
+}
+
+.message-wrapper {
+  display: flex;
+  max-width: 70%;
+}
+
+.message-wrapper.bot {
+  align-self: flex-start;
+}
+
+.message-wrapper.user {
+  align-self: flex-end;
+  flex-direction: row-reverse; /* Avatar on right if we had one, or just aligns text */
+}
+
+.message-bubble {
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.message-wrapper.bot .message-bubble {
+  background-color: white;
+  border: 1px solid var(--teams-border);
+  margin-left: 10px;
+}
+
+.message-wrapper.user .message-bubble {
+  background-color: #DCF8C6; /* Whatsapp green? No teams is simpler */
+  background-color: #E8EBF5; /* Slight purple tint */
+  margin-right: 10px;
+}
+
+.message-sender {
+  font-size: 11px;
+  color: var(--teams-gray-text);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+/* --- Input Area --- */
+.chat-input-container {
+  padding: 20px;
+  background-color: white;
+  border-top: 1px solid var(--teams-border);
+}
+
+.input-toolbar {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 5px;
+  color: var(--teams-gray-text);
+}
+
+.input-toolbar i {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.input-box-wrapper {
+  border: 1px solid var(--teams-border);
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.input-box-wrapper input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.bottom-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-tools {
+  display: flex;
+  gap: 15px;
+  color: var(--teams-gray-text);
+}
+
+.left-tools i {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.send-button {
+  background: transparent;
+  border: none;
+  color: var(--teams-purple);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.send-button:hover {
+  color: var(--teams-purple-dark);
+}
